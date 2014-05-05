@@ -2,8 +2,8 @@ package tarea2;
 
 public class NodoSuperior extends PrimerNodo {
 	
-	private int primerValor;// = getValorMinimo();
-	private int segundoValor; //minimo de otro de los primeros nodos
+	private int primerValor;
+	private int segundoValor; 
 	protected int maximo;
 	protected int minimo;
 	
