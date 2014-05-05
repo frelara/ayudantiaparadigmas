@@ -4,6 +4,15 @@ public class PrimerNodo {
 	
 	private int primerValor;
 	private int segundoValor;
+	protected int maximo;
+	protected int minimo;
+	
+	public PrimerNodo(){
+		primerValor = 0;
+		segundoValor = 0;
+		maximo = valorMaximo(primerValor, segundoValor);
+		minimo = valorMinimo(primerValor, segundoValor);
+	}
 	
 	
 	public int valorMaximo(int primerValor, int segundoValor){
@@ -30,23 +39,13 @@ public class PrimerNodo {
 	
 	public int getValorMaximo(){
 		
-		if(primerValor > segundoValor){
-			return primerValor;
-		}
-		else{
-			return segundoValor;
-		}
+		return maximo;
 		
 	}
 	
 	public int getValorMinimo(){
 		
-		if(primerValor < segundoValor){
-			return primerValor;
-		}
-		else{
-			return segundoValor;
-		}
+		return minimo;
 		
 	}
 	

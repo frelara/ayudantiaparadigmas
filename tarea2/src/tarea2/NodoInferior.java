@@ -4,8 +4,7 @@ public class NodoInferior extends PrimerNodo {
 	
 	private int primerValor;
 	private int segundoValor; 
-	protected int maximo;
-	protected int minimo;
+	
 	
 	public NodoInferior(){
 		
