@@ -6,8 +6,9 @@ public class Main {
 		PrimerNodo nodo1 = new PrimerNodo();
 		nodo1.setPrimerValor(7);
 		nodo1.setSegundoValor(9);
+		
 		NodoSuperior nodosu = new NodoSuperior();
-		System.out.println("primer valor superior" + nodosu.getValorMaximo());
+		System.out.println("el maximo del nodo superior es: " + nodosu.maximo);
 		
 
 	}

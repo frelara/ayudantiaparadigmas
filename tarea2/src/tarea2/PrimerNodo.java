@@ -2,8 +2,8 @@ package tarea2;
 
 public class PrimerNodo {
 	
-	private int primerValor;
-	private int segundoValor;
+	protected int primerValor;
+	protected int segundoValor;
 	protected int maximo;
 	protected int minimo;
 	
@@ -37,17 +37,7 @@ public class PrimerNodo {
 		
 	}
 	
-	public int getValorMaximo(){
-		
-		return maximo;
-		
-	}
 	
-	public int getValorMinimo(){
-		
-		return minimo;
-		
-	}
 	
 	public void setPrimerValor(int primerValor){
 		

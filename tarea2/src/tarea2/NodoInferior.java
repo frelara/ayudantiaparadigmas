@@ -1,14 +1,11 @@
 package tarea2;
 
 public class NodoInferior extends PrimerNodo {
-	
-	private int primerValor;
-	private int segundoValor; 
-	
+		
 	
 	public NodoInferior(){
 		
-		primerValor = super.getValorMaximo();
+		primerValor = super.maximo;
 		segundoValor = 10; //este atributo deberia contener el valor
 						  //maximo de otro de los primeros nodos 
 						  //en esta ocacion tomara el valor de 10
