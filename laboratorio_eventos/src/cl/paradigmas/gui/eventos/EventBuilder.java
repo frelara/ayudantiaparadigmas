@@ -13,8 +13,8 @@ import cl.paradigmas.modelo.Linea;
 
 
 final public class EventBuilder {
-	static Point released = new Point();
-	static Point dragged = new Point();
+	static Point pressed = new Point();
+	//static Point dragged = new Point();
 
 	private EventBuilder(){}
 	/**
@@ -66,7 +66,7 @@ final public class EventBuilder {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				if(ventana.getSeleccionado() == Ventana.CIRCULO){
-					Circulo miCirculo = new Circulo(e.getPoint(),100);
+					Circulo miCirculo = new Circulo(e.getPoint(),65);
 					ventana.getCanvas().addDibujable(miCirculo);
 					ventana.getCanvas().repaint();
 				}
@@ -82,26 +82,21 @@ final public class EventBuilder {
 		MouseAdapter miMouseAdapter = new MouseAdapter(){
 					
 			@Override 
-			public void mouseReleased(MouseEvent e){
-				released = e.getPoint();
-			}
-			
-			@Override
-			public void mouseDragged(MouseEvent e){
-				dragged = e.getPoint();
-			}
-			
-			@Override
 			public void mousePressed(MouseEvent e){
+				pressed = e.getPoint();
+			}
+			
+			@Override
+			public void mouseReleased(MouseEvent e){
+				
 				if(ventana.getSeleccionado() == Ventana.LINEA){
-					Linea miLinea = new Linea(e.getPoint(), released);
+					Linea miLinea = new Linea(pressed, e.getPoint());
 					ventana.getCanvas().addDibujable(miLinea);
 					ventana.getCanvas().repaint();
 							
 				}
 			
 			}
-			
 			
 			};
 		
