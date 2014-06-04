@@ -14,7 +14,6 @@ import cl.paradigmas.modelo.Linea;
 
 final public class EventBuilder {
 	static Point pressed = new Point();
-	//static Point dragged = new Point();
 
 	private EventBuilder(){}
 	/**
