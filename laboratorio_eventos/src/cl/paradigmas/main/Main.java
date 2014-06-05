@@ -27,6 +27,7 @@ public class Main {
 		ventana.getToolbar().addgrupoBtn(linea);
 		ventana.getCanvas().addMouseListener(EventBuilder.eventoCirculo(ventana));
 		ventana.getCanvas().addMouseListener(EventBuilder.eventoLinea(ventana));
+		ventana.getCanvas().addMouseMotionListener(EventBuilder.eventoLinea(ventana));
 		ventana.getToolbar().getBtnLimpiar().addActionListener(EventBuilder.eventoLimpiar(ventana));
 		
 		

@@ -13,7 +13,6 @@ import cl.paradigmas.modelo.Linea;
 
 
 final public class EventBuilder {
-	static Point pressed = new Point();
 
 	private EventBuilder(){}
 	/**
@@ -82,15 +81,32 @@ final public class EventBuilder {
 					
 			@Override 
 			public void mousePressed(MouseEvent e){
-				pressed = e.getPoint();
+				if(ventana.getSeleccionado() == Ventana.LINEA && ventana.getCanvas().isDibujandoTmp() == false){
+					Point inicio = new Point();
+					inicio = e.getPoint();
+					Linea linea = new Linea(inicio,inicio);
+					ventana.getCanvas().setDibujableTmp(linea);
+					ventana.getCanvas().setDibujandoTmp(true);
+					ventana.getCanvas().repaint();
+				}
 			}
+			
+			@Override 
+			public void mouseDragged(MouseEvent e){
+				if(ventana.getSeleccionado() == Ventana.LINEA && ventana.getCanvas().isDibujandoTmp() == true){
+					((Linea)ventana.getCanvas().getDibujableTmp()).setFin(e.getPoint());
+					ventana.getCanvas().repaint();
+				}
+			}
+			
 			
 			@Override
 			public void mouseReleased(MouseEvent e){
 				
-				if(ventana.getSeleccionado() == Ventana.LINEA){
-					Linea miLinea = new Linea(pressed, e.getPoint());
-					ventana.getCanvas().addDibujable(miLinea);
+				if(ventana.getSeleccionado() == Ventana.LINEA && ventana.getCanvas().isDibujandoTmp() == true){
+					((Linea)ventana.getCanvas().getDibujableTmp()).setFin(e.getPoint());
+					ventana.getCanvas().addDibujable(ventana.getCanvas().getDibujableTmp());
+					ventana.getCanvas().setDibujandoTmp(false);
 					ventana.getCanvas().repaint();
 							
 				}
